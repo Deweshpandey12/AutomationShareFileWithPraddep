@@ -23,7 +23,7 @@ public class SampleJDBCExecuteUpdate
 	            Statement state = con.createStatement();
 
 	            // Step 4: Execute query
-	            int result = state.executeUpdate("UPDATE `pensionbox_qa`.`kyc_verification_master` SET `pan_number` = 'AGOPJ7236K' WHERE `pan_number` ='BZNPP9301C'");
+	            int result = state.executeUpdate("UPDATE `pensionbox_qa`.`kyc_verification_master` SET `pan_number` = 'AKRPD2456N' WHERE `pan_number` ='BZNPP9301C'");
 	            if (result == 1) {
 	                System.out.println("Data is modified");
 	            } else {

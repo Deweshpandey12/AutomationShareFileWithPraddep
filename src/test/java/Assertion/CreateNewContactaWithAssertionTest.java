@@ -30,7 +30,6 @@ public class CreateNewContactaWithAssertionTest extends BaseClass
 		// create contact with mandatory field
 		CreateNewContactPage cncp=new CreateNewContactPage(driver);
 		cncp.createNewContact(LASTNAME);
-		Assert.fail();
 		
 		// Verify Contact details
 		ContactInfoPage cip=new ContactInfoPage(driver);

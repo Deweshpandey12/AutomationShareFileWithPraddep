@@ -22,12 +22,12 @@ public class BaseClass
 	public SeleniumUtility sUtil=new SeleniumUtility();
 	public WebDriver driver;
 	public static WebDriver sdriver;
-	@BeforeSuite
+	@BeforeSuite(alwaysRun = true)
 	public void bsConfig()
 	{
 		System.out.println("=========DB Connection successful===========");
 	}
-	@BeforeClass
+	@BeforeClass(alwaysRun = true)
 	public void bcConfig() throws IOException
 	{
 		String URL = putil.readDataFromPropertyFile("url");
@@ -45,7 +45,7 @@ public class BaseClass
 		System.out.println("=============Browser Launch successful ==============");
 		
 	}
-	@BeforeMethod
+	@BeforeMethod(alwaysRun = true)
 	public void bmCofig() throws IOException
 	{
 		String USERNAME = putil.readDataFromPropertyFile("username");
@@ -57,7 +57,7 @@ public class BaseClass
 		System.out.println("=============Login To App successful============");
 	}
 	
-	@AfterMethod
+	@AfterMethod(alwaysRun = true)
 	public void amConfig()
 	{
 		HomePage hp=new HomePage(driver);
@@ -65,13 +65,13 @@ public class BaseClass
 		System.out.println("==========Logout is successfull====================");
 	}
 
-	@AfterClass
+	@AfterClass(alwaysRun = true)
 	public void acConfig()
 	{
 		driver.quit();
 		System.out.println("-----------Browser class----------");
 	}
-	@AfterSuite
+	@AfterSuite(alwaysRun = true)
 	public void asConfig()
 	{
 		System.out.println("----------DB Connection closed---------");
